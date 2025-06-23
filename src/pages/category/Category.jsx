@@ -4,7 +4,7 @@ export default function Category() {
   return (
     <>
     <div>
-      
+      <p>Hello world</p>
     </div>
     </>
   )
