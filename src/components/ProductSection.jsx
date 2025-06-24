@@ -4,10 +4,6 @@ import ProductCard from './ProductCard';
 import { products } from '../products-data'; // adjust path if needed
 
 export default function ProductSection({ title, data }) {
-
- 
-
-
   return (
     <div>
       <section className="m-auto justify-around">
