@@ -104,7 +104,6 @@ export default function Header() {
             <Link className='font-semibold hover:text-orange-400' to="/category">Мясо, птица, колбаса</Link>
           </div>
         </div>
-      
       )}
     </div>
   );
