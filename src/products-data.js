@@ -8,10 +8,10 @@ export const products = [
       disprice: "70.50$",
       rating: 5, discount: 0 + "%",
       tag: "Previously Bought",
-      images: ["../images/products/1.png",
-       "../images/products/2.png",
-       "../images/products/3.png",
-       "../images/products/4.png"] },
+      images: ["/images/products/1.png",
+       "/images/products/2.png",
+       "/images/products/3.png",
+       "/images/products/4.png"] },
 
   {
      id: 2, 
@@ -25,7 +25,7 @@ export const products = [
       images: ["../images/products/2.png",
        "../images/products/3.png",
        "../images/products/4.png",
-       "../images/products/5.png"] },
+       "/images/products/5.png"] },
 
   {
      id: 3, 
@@ -36,10 +36,10 @@ export const products = [
       disprice: "45.50$",
       rating: 5, discount: 20 + "%",
       tag: "New Arrivals",
-      images: ["../images/products/3.png",
-       "../images/products/4.png",
-       "../images/products/5.png",
-       "../images/products/6.png"] },
+      images: ["/images/products/3.png",
+       "/images/products/4.png",
+       "/images/products/5.png",
+       "/images/products/6.png"] },
 
   {
      id: 4, 
@@ -50,10 +50,10 @@ export const products = [
       disprice: "45.00$",
       rating: 4.5, discount: 20 + "%",
       tag: "Promotions",
-      images: ["../images/products/4.png",
-       "../images/products/5.png",
-       "../images/products/6.png",
-       "../images/products/7.png"] },
+      images: ["/images/products/4.png",
+       "/images/products/5.png",
+       "/images/products/6.png",
+       "/images/products/7.png"] },
 
   {
      id: 5, 
@@ -64,10 +64,10 @@ export const products = [
       disprice: "40.00$",
       rating: 5, discount: 20 + "%",
       tag: "Previously Bought",
-      images: ["../images/products/5.png",
-       "../images/products/6.png",
-       "../images/products/7.png",
-       "../images/products/8.png"] },
+      images: ["/images/products/5.png",
+       "/images/products/6.png",
+       "/images/products/7.png",
+       "/images/products/8.png"] },
 
   {
      id: 6, 
@@ -78,10 +78,10 @@ export const products = [
       disprice: "40.00$",
       rating: 3.5, discount: 50 + "%",
       tag: "Promotions",
-      images: ["../images/products/6.png",
-       "../images/products/7.png",
-       "../images/products/8.png",
-       "../images/products/9.png"] },
+      images: ["./images/products/6.png",
+       "./images/products/7.png",
+       "./images/products/8.png",
+       "./images/products/9.png"] },
 
   {
      id: 7, 
@@ -92,10 +92,10 @@ export const products = [
       disprice: "40.00$",
       rating: 3.5, discount: 20 + "%",
       tag: "Previously Bought",
-      images: ["../images/products/7.png",
-       "../images/products/8.png",
-       "../images/products/9.png",
-       "../images/products/10.png"] },
+      images: ["/images/products/7.png",
+       "/images/products/8.png",
+       "/images/products/9.png",
+       "/images/products/10.png"] },
 
   {
      id: 8, 
@@ -106,10 +106,10 @@ export const products = [
       disprice: "40.00$",
       rating: 4.5, discount: 20 + "%",
       tag: "Promotions",
-      images: ["../images/products/8.png",
-       "../images/products/9.png",
-       "../images/products/10.png",
-       "../images/products/11.png"] },
+      images: ["/images/products/8.png",
+       "/images/products/9.png",
+       "/images/products/10.png",
+       "/images/products/11.png"] },
 
   {
      id: 9, 
@@ -120,10 +120,10 @@ export const products = [
       disprice: "40.00$",
       rating: 5, discount: 20 + "%",
       tag: "New Arrivals",
-      images: ["../images/products/9.png",
-       "../images/products/10.png",
-       "../images/products/11.png",
-       "../images/products/12.png"] },
+      images: ["/images/products/9.png",
+       "/images/products/10.png",
+       "/images/products/11.png",
+       "/images/products/12.png"] },
 
   {
      id: 10,
@@ -134,10 +134,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/10.png",
-         "../images/products/11.png",
-         "../images/products/12.png",
-         "../images/products/13.png"] },
+       images: ["/images/products/10.png",
+         "/images/products/11.png",
+         "/images/products/12.png",
+         "/images/products/13.png"] },
 
   {
      id: 11,
@@ -148,10 +148,10 @@ export const products = [
        disprice: "40.00$",
        rating: 3.5, discount: 50 + "%",
        tag: "Promotions",
-       images: ["../images/products/11.png",
-         "../images/products/12.png",
-         "../images/products/13.png",
-         "../images/products/14.png"] },
+       images: ["/images/products/11.png",
+         "/images/products/12.png",
+         "/images/products/13.png",
+         "/images/products/14.png"] },
 
   {
      id: 12,
@@ -162,10 +162,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4, discount: 20 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/12.png",
-         "../images/products/13.png",
-         "../images/products/14.png",
-         "../images/products/15.png"] },
+       images: ["/images/products/12.png",
+         "/images/products/13.png",
+         "/images/products/14.png",
+         "/images/products/15.png"] },
 
   {
      id: 13,
@@ -176,10 +176,10 @@ export const products = [
        disprice: "40.00$",
        rating: 5, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/13.png",
-         "../images/products/14.png",
-         "../images/products/15.png",
-         "../images/products/16.png"] },
+       images: ["/images/products/13.png",
+         "/images/products/14.png",
+         "/images/products/15.png",
+         "/images/products/16.png"] },
 
   {
      id: 14,
@@ -190,10 +190,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 50 + "%",
        tag: "Promotions",
-       images: ["../images/products/14.png",
-         "../images/products/15.png",
-         "../images/products/16.png",
-         "../images/products/17.png"] },
+       images: ["/images/products/14.png",
+         "/images/products/15.png",
+         "/images/products/16.png",
+         "/images/products/17.png"] },
 
   {
      id: 15,
@@ -204,10 +204,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 0 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/15.png",
-         "../images/products/16.png",
-         "../images/products/17.png",
-         "../images/products/18.png"] },
+       images: ["/images/products/15.png",
+         "/images/products/16.png",
+         "/images/products/17.png",
+         "/images/products/18.png"] },
 
   {
      id: 16,
@@ -218,10 +218,10 @@ export const products = [
        disprice: "40.00$",
        rating: 3.5, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/16.png",
-         "../images/products/17.png",
-         "../images/products/18.png",
-         "../images/products/19.png"] },
+       images: ["/images/products/16.png",
+         "/images/products/17.png",
+         "/images/products/18.png",
+         "/images/products/19.png"] },
 
   {
      id: 17,
@@ -232,10 +232,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 50 + "%",
        tag: "Promotions",
-       images: ["../images/products/17.png",
-         "../images/products/18.png",
-         "../images/products/19.png",
-         "../images/products/20.png"] },
+       images: ["/images/products/17.png",
+         "/images/products/18.png",
+         "/images/products/19.png",
+         "/images/products/20.png"] },
 
   {
      id: 18,
@@ -246,10 +246,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4, discount: 0 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/18.png",
-         "../images/products/19.png",
-         "../images/products/20.png",
-         "../images/products/21.png"] },
+       images: ["/images/products/18.png",
+         "/images/products/19.png",
+         "/images/products/20.png",
+         "/images/products/21.png"] },
 
   {
      id: 19,
@@ -260,10 +260,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/19.png",
-         "../images/products/20.png",
-         "../images/products/21.png",
-         "../images/products/22.png"] },
+       images: ["/images/products/19.png",
+         "/images/products/20.png",
+         "/images/products/21.png",
+         "/images/products/22.png"] },
 
   {
      id: 20,
@@ -274,10 +274,10 @@ export const products = [
        disprice: "40.00$",
        rating: 5, discount: 0 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/20.png",
-         "../images/products/21.png",
-         "../images/products/22.png",
-         "../images/products/23.png"] },
+       images: ["/images/products/20.png",
+         "/images/products/21.png",
+         "/images/products/22.png",
+         "/images/products/23.png"] },
 
   {
      id: 21,
@@ -288,10 +288,10 @@ export const products = [
        disprice: "40.00$",
        rating: 5, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/21.png",
-         "../images/products/22.png",
-         "../images/products/23.png",
-         "../images/products/24.png"] },
+       images: ["/images/products/21.png",
+         "/images/products/22.png",
+         "/images/products/23.png",
+         "/images/products/24.png"] },
 
   {
      id: 22,
@@ -302,10 +302,10 @@ export const products = [
        disprice: "40.00$",
        rating: 5, discount: 20 + "%",
        tag: "Promotions",
-       images: ["../images/products/22.png",
-         "../images/products/23.png",
-         "../images/products/24.png",
-         "../images/products/25.png"] },
+       images: ["/images/products/22.png",
+         "/images/products/23.png",
+         "/images/products/24.png",
+         "/images/products/25.png"] },
 
   {
      id: 23,
@@ -316,10 +316,10 @@ export const products = [
        disprice: "40.00$",
        rating: 3.5, discount: 20 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/23.png",
-         "../images/products/24.png",
-         "../images/products/25.png",
-         "../images/products/26.png"] },
+       images: ["/images/products/23.png",
+         "/images/products/24.png",
+         "/images/products/25.png",
+         "/images/products/26.png"] },
 
   {
      id: 24,
@@ -330,10 +330,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/24.png",
-         "../images/products/25.png",
-         "../images/products/26.png",
-         "../images/products/27.png"] },
+       images: ["/images/products/24.png",
+         "/images/products/25.png",
+         "/images/products/26.png",
+         "/images/products/27.png"] },
 
   {
      id: 25,
@@ -344,10 +344,10 @@ export const products = [
        disprice: "40.00$",
        rating: 3.5, discount: 20 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/25.png",
-         "../images/products/26.png",
-         "../images/products/27.png",
-         "../images/products/28.png"] },
+       images: ["/images/products/25.png",
+         "/images/products/26.png",
+         "/images/products/27.png",
+         "/images/products/28.png"] },
 
   {
      id: 26,
@@ -358,10 +358,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/26.png",
-         "../images/products/27.png",
-         "../images/products/28.png",
-         "../images/products/29.png"] },
+       images: ["/images/products/26.png",
+         "/images/products/27.png",
+         "/images/products/28.png",
+         "/images/products/29.png"] },
 
   {
      id: 27,
@@ -372,10 +372,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 20 + "%",
        tag: "Promotions",
-       images: ["../images/products/27.png",
-         "../images/products/28.png",
-         "../images/products/29.png",
-         "../images/products/30.png"] },
+       images: ["/images/products/27.png",
+         "/images/products/28.png",
+         "/images/products/29.png",
+         "/images/products/30.png"] },
 
   {
      id: 28,
@@ -386,10 +386,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4, discount: 20 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/28.png",
-         "../images/products/29.png",
-         "../images/products/30.png",
-         "../images/products/31.png"] },
+       images: ["/images/products/28.png",
+         "/images/products/29.png",
+         "/images/products/30.png",
+         "/images/products/31.png"] },
 
   {
      id: 29,
@@ -400,10 +400,10 @@ export const products = [
        disprice: "40.00$",
        rating: 3, discount: 50 + "%",
        tag: "Promotions",
-       images: ["../images/products/29.png",
-         "../images/products/30.png",
-         "../images/products/31.png",
-         "../images/products/32.png"] },
+       images: ["/images/products/29.png",
+         "/images/products/30.png",
+         "/images/products/31.png",
+         "/images/products/32.png"] },
 
   {
      id: 30,
@@ -414,10 +414,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/30.png",
-         "../images/products/31.png",
-         "../images/products/32.png",
-         "../images/products/33.png"] },
+       images: ["/images/products/30.png",
+         "/images/products/31.png",
+         "/images/products/32.png",
+         "/images/products/33.png"] },
 
   {
      id: 31,
@@ -428,10 +428,10 @@ export const products = [
        disprice: "40.00$",
        rating: 5, discount: 50 + "%",
        tag: "Promotions",
-       images: ["../images/products/31.png",
-         "../images/products/32.png",
-         "../images/products/33.png",
-         "../images/products/34.png"] },
+       images: ["/images/products/31.png",
+         "/images/products/32.png",
+         "/images/products/33.png",
+         "/images/products/34.png"] },
 
   {
      id: 32,
@@ -442,10 +442,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 20 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/32.png",
-         "../images/products/33.png",
-         "../images/products/34.png",
-         "../images/products/35.png"] },
+       images: ["/images/products/32.png",
+         "/images/products/33.png",
+         "/images/products/34.png",
+         "/images/products/35.png"] },
 
   {
      id: 33,
@@ -456,10 +456,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4.5, discount: 20 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/33.png",
-         "../images/products/34.png",
-         "../images/products/35.png",
-         "../images/products/36.png"] },
+       images: ["/images/products/33.png",
+         "/images/products/34.png",
+         "/images/products/35.png",
+         "/images/products/36.png"] },
 
   {
      id: 34,
@@ -470,10 +470,10 @@ export const products = [
        disprice: "40.00$",
        rating: 4, discount: 20 + "%",
        tag: "Promotions",
-       images: ["../images/products/34.png",
-         "../images/products/35.png",
-         "../images/products/36.png",
-         "../images/products/1.png"] },
+       images: ["/images/products/34.png",
+         "/images/products/35.png",
+         "/images/products/36.png",
+         "/images/products/1.png"] },
 
   {
      id: 35,
@@ -484,10 +484,10 @@ export const products = [
        disprice: "40.00$",
        rating: 1, discount: 0 + "%",
        tag: "Previously Bought",
-       images: ["../images/products/35.png",
-         "../images/products/36.png",
-         "../images/products/1.png",
-         "../images/products/2.png"] },
+       images: ["/images/products/35.png",
+         "/images/products/36.png",
+         "/images/products/1.png",
+         "/images/products/2.png"] },
 
   {
      id: 36,
@@ -498,8 +498,8 @@ export const products = [
        disprice: "40.00$",
        rating: 3.5, discount: 0 + "%",
        tag: "New Arrivals",
-       images: ["../images/products/36.png",
-         "../images/products/1.png",
-         "../images/products/2.png",
-         "../images/products/3.png"] }
+       images: ["/images/products/36.png",
+         "/images/products/1.png",
+         "/images/products/2.png",
+         "/images/products/3.png"] }
 ];
