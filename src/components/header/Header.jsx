@@ -39,15 +39,23 @@ export default function Header() {
 
       {/* Icons va profil */}
       <div className="flex items-center gap-4">
-        <div className="flex flex-col items-center text-sm text-gray-700" onClick={goToFavorites}> 
-          <FaHeart className="text-xl" />
+        <div
+          onClick={goToFavorites}
+          className="relative flex flex-col items-center text-sm text-gray-700 cursor-pointer hover:text-red-500 transition"
+        >
+           
+          <FaHeart className="text-xl mb-1" />
+ 
           {favorites.length > 0 && (
-            <span className="absolute top-1 right-65 bg-red-500 text-white text-[10px] font-bold px-1.5 py-[2px] rounded-full">
+            <span className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-[2px] rounded-full">
               {favorites.length}
             </span>
           )}
+
+          {/* Label */}
           <div className="text-sm text-center">Избранное</div>
         </div>
+
         <div className="flex flex-col items-center text-sm text-gray-700">
           <FaBox className="text-xl" />
           <div className="text-sm text-center">Заказы </div>
