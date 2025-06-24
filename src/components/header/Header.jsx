@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaHeart, FaBox, FaShoppingCart, FaSearch, FaBars } from "react-icons/fa";
 import Logo from "./logo.svg"
 import Avatar from "./avatar.png"
+import { favoriteStore } from "../../store/favoriteStore";
 
 export default function Header() {
+  const navigate = useNavigate();
+  const { favorites } = favoriteStore();
+  const goToFavorites = () => {
+    navigate("/favorites");
+  };
   return (
     <div className="w-full flex items-center justify-between bg-white p-2 shadow-md">
       {/* Logo va katalog */}
@@ -32,8 +39,13 @@ export default function Header() {
 
       {/* Icons va profil */}
       <div className="flex items-center gap-4">
-        <div className="flex flex-col items-center text-sm text-gray-700">
+        <div className="flex flex-col items-center text-sm text-gray-700" onClick={goToFavorites}> 
           <FaHeart className="text-xl" />
+          {favorites.length > 0 && (
+            <span className="absolute top-1 right-65 bg-red-500 text-white text-[10px] font-bold px-1.5 py-[2px] rounded-full">
+              {favorites.length}
+            </span>
+          )}
           <div className="text-sm text-center">Избранное</div>
         </div>
         <div className="flex flex-col items-center text-sm text-gray-700">
