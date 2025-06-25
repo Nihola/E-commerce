@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-const EnterDelivery = () => {
+const EnterDelivery = ({register}) => {
   const [phone, setPhone] = useState('')
 
   const handleChange = (e) => {
@@ -11,8 +11,7 @@ const EnterDelivery = () => {
   }
 
   return (
-
-    <section className='border p-4'>
+    <section>
       <h2 className='text-2xl font-bold pb-4'>Kirish</h2>
       <div className='flex flex-wrap justify-center gap-4 items-center'>
         <div className="flex items-center border rounded-md px-2 py-1 bg-white">
@@ -20,6 +19,7 @@ const EnterDelivery = () => {
           <input
             type="tel"
             value={phone}
+            {...register("phone")}
             onChange={handleChange}
             maxLength={9}
             placeholder='901234567'
