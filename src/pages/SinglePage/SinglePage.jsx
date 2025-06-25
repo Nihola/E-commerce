@@ -56,7 +56,7 @@ return (
           </div>
           <div className="flex flex-col items-center ">
             <p className='font-[Rubik] text-[#414141] font-[700] text-[36px]  tracking-[0%] align-middle'>
-              108,99 ₽
+              {singleCard?.disprice}
             </p>
             <div className="flex gap-2">
               <span
