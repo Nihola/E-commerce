@@ -5,6 +5,9 @@ import Category from "../pages/category/Category";
 import Delivery from "../pages/delivery/Delivery";
 import Favorites from "./../pages/favorites/Favorites";
 import Home from "../pages/home/Home";
+import ProductListPage from "../pages/product/ProductList";
+ 
+ 
 
 export const Router = createBrowserRouter([
   {
@@ -32,6 +35,11 @@ export const Router = createBrowserRouter([
         path: "/favorites",
         element: <Favorites />,
       },
+      {
+        path: "/products/:tag",
+        element: <ProductListPage />
+      }
+      
     ],
   },
 ]);
