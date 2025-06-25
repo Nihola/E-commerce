@@ -132,4 +132,4 @@ return (
 )
 }
 
-export default SinglePage
+export default SinglePage;
