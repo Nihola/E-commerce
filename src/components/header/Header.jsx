@@ -1,18 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHeart, FaBox, FaShoppingCart, FaSearch, FaBars } from "react-icons/fa";
 import Logo from "./logo.svg";
 import avatarImg from "./avatar.png";
 import { favoriteStore } from "../../store/favoriteStore";
+import { products } from "../../products-data";
 
 export default function Header() {
   const navigate = useNavigate();
   const { favorites } = favoriteStore();
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
+  const [search, setSearch] = useState("");
 
   const goToFavorites = () => {
     navigate("/favorites");
   };
+  const goToProduct = (id) => {
+  navigate(`/product/${id}`);
+  }
+ const filteredProducts = useMemo(() => {
+  return products.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+}, [search]);
+
+
+
 
   return (
     <div className="relative w-full flex items-center justify-between bg-white p-2 shadow-md gap-3">
@@ -32,16 +45,38 @@ export default function Header() {
           Каталог
         </button>
       </div>
+      <div className="relative max-w-[600px] w-full">
+        <div className="flex items-center flex-1 ">
+          <input
+            onChange={(e) => setSearch(e?.target?.value)}
+            type="text"
+            placeholder="Найти товар"
+            className="w-full border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none"
+          />
+          <button className="bg-green-500 p-[13px] rounded-r-lg">
+            <FaSearch className="text-white" />
+          </button>
+        </div>
 
-      <div className="flex items-center flex-1 mx-4">
-        <input
-          type="text"
-          placeholder="Найти товар"
-          className="w-full border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none"
-        />
-        <button className="bg-green-500 p-[13px] rounded-r-lg">
-          <FaSearch className="text-white" />
-        </button>
+        {search && (
+          <div className="absolute z-10 w-full flex flex-col top-[45px] bg-white p-1.5 max-h-[300px] overflow-y-auto shadow-lg">
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <div  key={product.id} onClick={() => goToProduct(product.id)} className="flex gap-[20px] p-1.5  hover:bg-gray-100 cursor-pointer">
+                  <img width="60px" src={product.images[0]} alt="rasm" />
+                  <div>
+                    <h3 className="font-semibold">{product.name}</h3>
+                    <p className="text-sm text-gray-600">{product.description}</p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="text-gray-500 px-4 py-2">Товар не найден</div>
+            )}
+          </div>
+        )}
+
+
       </div>
 
       <div className="flex items-center gap-4">
@@ -94,9 +129,9 @@ export default function Header() {
             <Link className='font-semibold hover:text-orange-400' to="/category"> Чай, кофе </Link>
           </div>
           <div className="flex flex-col gap-2">
-            <Link className='font-semibold hover:text-orange-400'to="/category"> Бакалея </Link>
-            <Link className='font-semibold hover:text-orange-400'to="/category"> Здоровое питание </Link>
-            <Link className='font-semibold hover:text-orange-400'to="/category"> Зоотовары </Link>
+            <Link className='font-semibold hover:text-orange-400' to="/category"> Бакалея </Link>
+            <Link className='font-semibold hover:text-orange-400' to="/category"> Здоровое питание </Link>
+            <Link className='font-semibold hover:text-orange-400' to="/category"> Зоотовары </Link>
           </div>
           <div className="flex flex-col gap-2">
             <Link className='font-semibold hover:text-orange-400' to="/category"> Непродовольственные товары </Link>
