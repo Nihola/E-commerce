@@ -35,6 +35,7 @@ const EnterDelivery = ({register}) => {
           </button>
         </NavLink>
       </div>
+
     </section>
   )
 }

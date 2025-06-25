@@ -7,7 +7,7 @@ const WhenDelivery = ({register}) => {
 
   return (
     <section className=''>
-      <h2 className='text-2xl font-bold pb-6 ml-'>Qachon</h2>
+      <h2 className='text-2xl font-bold pb-6'>Qachon</h2>
       <div className='flex justify-between flex-wrap gap-4'>
         <span className='flex flex-col'>
           <p className='mb-1'>Sana:</p>
@@ -28,6 +28,7 @@ const WhenDelivery = ({register}) => {
           </div>
         </span>
       </div>
+
     </section>
   )
 }

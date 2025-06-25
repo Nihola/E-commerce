@@ -5,6 +5,8 @@ import WhenDelivery from './WhenDelivery'
 import EnterDelivery from './EnterDelivery'
 import SumDelivery from './SumDelivery'
 
+import WhenDelivery from './WhereDelivery'
+
 export default function Delivery() {
   const { register, handleSubmit, reset } = useForm()
   console.log("Register nima:", register)

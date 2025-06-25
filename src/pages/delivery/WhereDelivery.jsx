@@ -2,7 +2,7 @@ import React from 'react'
 
 const WhereDelivery = ({register}) => {
   return (
-    <section className=' '>
+    <section>
         <h2 className='text-2xl font-bold pb-6 ml-2'>Qayerdan</h2>
         <div className='flex flex-wrap gap-8 justify-around items-center'>
            <span>
@@ -34,6 +34,7 @@ const WhereDelivery = ({register}) => {
               <label className='text-gray-700 block my-1'>Qo'shimcha:</label>
               <input className='border-2 border-gray-600 outline-none rounded-md py-1 px-2 focus:bg-blue-50 focus:border-gray-500' type="text" placeholder="Qo'shimcha" {...register("additional")}/>
             </span>
+
         </div>
     </section>
   )
