@@ -1,8 +1,9 @@
 import React from "react";
 import { FaStar, FaHeart } from "react-icons/fa";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart } from "react-icons/fi"; 
 import { favoriteStore } from "./../store/favoriteStore";
 import { useCartStore } from './../store/cartStore';
+import { useNavigate } from "react-router-dom";
 export default function ProductCard({ product }) {
   const { addFavorites, isFavorite, removeFavorites } = favoriteStore();
   const { addToCart, increment, decrement, isInCart, getQuantity } = useCartStore();
@@ -13,6 +14,10 @@ export default function ProductCard({ product }) {
       ? removeFavorites(product.id)
       : addFavorites(product);
   };
+  const navigate = useNavigate()
+  const handleSubmit = (id)=> {
+    navigate(`/product/${id}`)
+  }
 
   return (
     <div className="group bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all relative max-w-xs w-full m-auto">
@@ -38,6 +43,7 @@ export default function ProductCard({ product }) {
 
 
       <img
+        onClick={()=>handleSubmit(product.id)}
         src={product.images[0]}
         alt={product.name}
         className="w-full h-40 object-cover rounded-lg mt-3 mb-4 transition-transform duration-300 group-hover:scale-94"
