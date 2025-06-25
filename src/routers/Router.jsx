@@ -5,9 +5,14 @@ import Category from "../pages/category/Category";
 import Delivery from "../pages/delivery/Delivery";
 import Favorites from "./../pages/favorites/Favorites";
 import Home from "../pages/home/Home";
+
+
 import ProductListPage from "../pages/product/ProductList";
+import SinglePage from "../pages/singlepage/SinglePage";
+
+
  
- 
+
 
 export const Router = createBrowserRouter([
   {
@@ -36,10 +41,15 @@ export const Router = createBrowserRouter([
         element: <Favorites />,
       },
       {
+
+        path:"product/:id",
+        element: <SinglePage/>
+      },
+      {
         path: "/products/:tag",
         element: <ProductListPage />
       }
-      
+
     ],
   },
 ]);
