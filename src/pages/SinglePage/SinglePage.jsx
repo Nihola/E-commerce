@@ -38,7 +38,7 @@ return (
           -{singleCard.discount}
         </div>
       )}
-        <img className='relative w-full max-w-[400px] h-[300px] sm:h-[350px] md:h-[400px] flex-shrink-0"' src={singleCard?.images[0]} alt="photo" />
+        <img className='relative rounded-[4px] w-full max-w-[400px] h-[300px] sm:h-[350px] md:h-[400px] flex-shrink-0"' src={singleCard?.images[0]} alt="photo" />
       </div>
     </div>
     <div className="flex w-[50%] flex-col ">
