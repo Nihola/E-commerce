@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import WhereDelivery from './WhereDelivery'
+ 
 import WhenDelivery from './WhenDelivery'
 import EnterDelivery from './EnterDelivery'
 import SumDelivery from './SumDelivery'
