@@ -5,7 +5,7 @@ import WhenDelivery from './WhenDelivery'
 import EnterDelivery from './EnterDelivery'
 import SumDelivery from './SumDelivery'
 
-import WhenDelivery from './WhereDelivery'
+import WhereDelivery from './WhereDelivery'
 
 export default function Delivery() {
   const { register, handleSubmit, reset } = useForm()
