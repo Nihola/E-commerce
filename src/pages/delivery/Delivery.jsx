@@ -3,8 +3,8 @@ import WhenDelivery from './WhenDelivery'
 import EnterDelivery from './EnterDelivery'
 import WhereDelivery from './WhereDelivery'
 import SumDelivery from './SumDelivery'
+import { useDeliveryData } from './hook/useDelivery'
 
-import { useDeliveryData } from './hook/useDeliveryData'
 
 export default function Delivery() {
   const { register, handleSubmit, sendMessage } = useDeliveryData()
