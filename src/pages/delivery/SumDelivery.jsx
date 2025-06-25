@@ -24,8 +24,8 @@ const SumDelivery = () => {
         <p className='text-2xl font-bold text-[#414141]'>250$</p>
       </div>
       <div>
-        <button className='w-full border p-3 bg-orange-500 text-white rounded-lg font-semibold cursor-pointer hover:bg-orange-400 active:scale-96 duration-250 mb-2'>Oldindan to'lov</button>
-        <button className='w-full border p-3 bg-green-500 text-white rounded-lg font-semibold cursor-pointer hover:bg-green-400 active:scale-96 duration-250'>Yetkazib bergandan keyin to'lov</button>
+        <button className='w-full border p-3 bg-orange-500 text-white rounded-lg font-semibold cursor-pointer hover:bg-orange-400 active:scale-96 duration-500 mb-2' type='submit'>Oldindan to'lov</button>
+        <button className='w-full border p-3 bg-green-500 text-white rounded-lg font-semibold cursor-pointer hover:bg-green-400 active:scale-96 duration-500' type='submit'>Yetkazib bergandan keyin to'lov</button>
       </div>
 
     </section>

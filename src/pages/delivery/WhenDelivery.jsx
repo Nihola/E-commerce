@@ -18,7 +18,7 @@ const WhenDelivery = ({register}) => {
           <div className='flex flex-wrap w-[250px] gap-2'>
             {timeOptions.map((time) => (
               <p
-              {...register("times")}
+              {...register("times", {required:"vaqtni tanlang"})}
                 key={time}
                 onClick={() => setSelectedTime(time)}
                 className={`py-1.5 px-3 rounded-md border cursor-pointer text-gray-800 

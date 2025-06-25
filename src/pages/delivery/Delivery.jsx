@@ -3,11 +3,10 @@ import { useForm } from 'react-hook-form'
 import WhereDelivery from './WhereDelivery'
 import EnterDelivery from './EnterDelivery'
 import SumDelivery from './SumDelivery'
-import WhenDelivery from './WhereDelivery'
+import WhenDelivery from './WhenDelivery'
 
 export default function Delivery() {
   const { register, handleSubmit, reset } = useForm()
-  console.log("Register nima:", register)
   const sendMessage = async (data) => {
     const message = `
     🛒 <b>Yangi buyurtma</b>:
@@ -17,6 +16,7 @@ export default function Delivery() {
     📅 <b>Sana:</b> ${data.date}
     ⏰ <b>Vaqt:</b> ${data.times}
     📞 <b>Tel:</b> ${data.phone}
+    👤 <b>Ism:</b> ${data.name}
     `
     const TOKEN = '8171242828:AAGekrDGyZJMZdghTIZurMr78LZpCBTQZiQ'
     const CHAT_ID = '1456386212'
@@ -46,9 +46,6 @@ export default function Delivery() {
           <WhereDelivery register={register} />
           <WhenDelivery register={register} />
           <EnterDelivery register={register} />
-          <button type='submit' className='bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700'>
-            Buyurtma berish
-          </button>
         </div>
         <div>
           <SumDelivery />
