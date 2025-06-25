@@ -21,7 +21,7 @@ export default function Delivery() {
     const TOKEN = '8171242828:AAGekrDGyZJMZdghTIZurMr78LZpCBTQZiQ'
     const CHAT_ID = '1456386212'
     const URL = `https://api.telegram.org/bot${TOKEN}/sendMessage`
-
+    
     try {
       await fetch(URL, {
         method: 'POST',
@@ -39,6 +39,7 @@ export default function Delivery() {
       console.error(error)
     }
   }
+
   return (
     <section className='bg-[#f2eddc] p-6'>
       <form onSubmit={handleSubmit(sendMessage)} className='max-w-[1000px] p-4 mx-auto flex justify-between gap-12 items-start'>
