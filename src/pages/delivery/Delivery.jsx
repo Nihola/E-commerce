@@ -3,7 +3,7 @@ import WhereDelivery from './WhereDelivery'
 import EnterDelivery from './EnterDelivery'
 import SumDelivery from './SumDelivery'
 
-import WhenDelivery from './WhenDelivery'
+import WhenDelivery from './WhereDelivery'
 
 export default function Delivery() {
   return (
