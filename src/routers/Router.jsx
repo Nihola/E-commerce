@@ -8,8 +8,8 @@ import Home from "../pages/home/Home";
 
 
 import ProductListPage from "../pages/product/ProductList";
+import SinglePage from "../pages/singlepage/SinglePage";
 
-import SinglePage from './../pages/singlepage/SinglePage';
 
  
 
