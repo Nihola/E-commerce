@@ -6,6 +6,7 @@ const WhenDelivery = () => {
   const timeOptions = ["8 - 10", "10 - 12", "12 - 14", "14 - 16", "16 - 18", "18 - 20"]
 
   return (
+
     <section className='border p-4'>
       <h2 className='text-2xl font-bold pb-6 ml-2'>Qachon</h2>
       <div className='flex justify-around flex-wrap gap-4'>
@@ -27,6 +28,7 @@ const WhenDelivery = () => {
           </div>
         </span>
       </div>
+
     </section>
   )
 }

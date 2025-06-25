@@ -11,6 +11,7 @@ const EnterDelivery = () => {
   }
 
   return (
+
     <section className='border p-4'>
       <h2 className='text-2xl font-bold pb-4'>Kirish</h2>
       <div className='flex flex-wrap justify-center gap-4 items-center'>
@@ -34,6 +35,7 @@ const EnterDelivery = () => {
           </button>
         </NavLink>
       </div>
+
     </section>
   )
 }
