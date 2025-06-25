@@ -32,14 +32,6 @@ const SumDelivery = ({ handleSubmit, sendMessage }) => {
       </div>
 
       <button
-        type='button'
-        className='w-full border p-3 bg-orange-500 text-white rounded-lg font-semibold cursor-pointer hover:bg-orange-400 active:scale-96 duration-250 mb-2'
-        disabled
-      >
-        Oldindan to'lov
-      </button>
-
-      <button
         type='submit'
         onClick={handleSubmit(sendMessage)}
         className='w-full border p-3 bg-green-500 text-white rounded-lg font-semibold cursor-pointer hover:bg-green-400 active:scale-96 duration-250'
