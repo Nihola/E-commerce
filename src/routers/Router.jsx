@@ -8,7 +8,9 @@ import Home from "../pages/home/Home";
 
 
 import ProductListPage from "../pages/product/ProductList";
-import SinglePage from "../pages/singlePage/singlePage";
+import SinglePage from "../pages/singlepage/SinglePage";
+
+
  
 
 
