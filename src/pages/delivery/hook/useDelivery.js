@@ -11,7 +11,6 @@ export const useDeliveryData = () => {
 🏘 <b>Ko'cha:</b> ${data.street}, Uy: ${data.home}, Kvartira: ${data.apartment}
 📝 <b>Qo'shimcha:</b> ${data.additional || 'yo‘q'}
 📅 <b>Sana:</b> ${data.date}
-⏰ <b>Vaqt:</b> ${data.times}
 📞 <b>Tel:</b> ${data.phone}
     `
 
