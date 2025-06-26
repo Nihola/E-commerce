@@ -1,9 +1,8 @@
-// src/hooks/useDeliveryData.js
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 
 export const useDeliveryData = () => {
-  const { register, handleSubmit, reset } = useForm()
+  const { register, handleSubmit, reset, setValue, watch } = useForm()
 
   const sendMessage = async (data) => {
     const message = `
@@ -51,5 +50,7 @@ export const useDeliveryData = () => {
     handleSubmit,
     reset,
     sendMessage,
+    setValue,
+    watch,
   }
 }

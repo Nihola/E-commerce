@@ -1,41 +1,54 @@
 import React from 'react'
+import { FaHome } from "react-icons/fa";
 
-const WhereDelivery = ({register}) => {
+const FloatingInput = ({ label, name, register, type = "text", width = "w-[100px]" }) => {
+  return (
+    <div className={`relative ${width} mx-4 my-2`}>
+      <input
+        type={type}
+        {...register(name)}
+        className="peer cursor-pointer block px-2.5 pb-2.5 pt-6 w-full text-sm text-gray-900 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600"
+        placeholder=" "
+      />
+      <label
+        className={`absolute text-sm font-bold text-center py-1 text-gray-500 duration-400 transform scale-100 top-0 left-2.5 z-10 origin-[0] 
+          peer-placeholder-shown:translate-y-2 peer-placeholder-shown:scale-100
+          peer-focus:scale-75 peer-focus:-translate-y-1
+        `}
+      >
+        {label}
+      </label>
+    </div>
+  )
+}
+
+const WhereDelivery = ({ register }) => {
   return (
     <section>
-        <h2 className='text-2xl font-bold pb-6 ml-2'>Qayerdan</h2>
-        <div className='flex flex-wrap gap-8 justify-around items-center'>
-           <span>
-               <label className='text-gray-700 block mb-1'>Topshiriladigan hudud:</label>
-               <select {...register("district")} className='border rounded-md w-[200px] py-1 outline-none cursor-pointer'>
-                <option>Hudud tanlang</option>
-                <option value="Yunusobod">Yunusobod</option>
-                <option value="Sergeli">Sergeli</option>
-                <option value="Chilonzor">Chilonzor</option>
-                <option value="Yashnobod">Yashnobod</option>
-                <option value="Mirzo Ulug'bek">Mirzo Ulug'bek</option>
-                <option value="Shayxontohur">Shayxontohur</option>
-                <option value="Mirobod">Mirobod</option>
-               </select>
-           </span>
-            <span>
-              <label className='text-gray-700 block my-1'>Ko'cha:</label>
-              <input className='border-2 border-gray-600 outline-none rounded-md py-1 px-2 focus:bg-blue-50 focus:border-gray-500' type="text" placeholder="Ko'chani kiriting" {...register("street", {required:"Ko'chani kiriting"})} />
-            </span>
-            <span>
-              <label className='text-gray-700 block my-1'>Uy:</label>
-              <input className='border-2 border-gray-600 outline-none rounded-md py-1 px-2 focus:bg-blue-50 focus:border-gray-500 w-[60px]' type="number" placeholder='Uy' {...register("home", {required:"Uyni kiriting", minLength:{value:1}, maxLength:{value:4}})}/>
-            </span>
-            <span>
-              <label className='text-gray-700 block my-1'>Kvartira:</label>
-              <input className='border-2 border-gray-600 outline-none rounded-md py-1 px-2 focus:bg-blue-50 focus:border-gray-500 w-[100px]' type="number" placeholder='Kvartira' {...register("apartment", {required:"Enter apartment"})} />
-            </span>
-            <span>
-              <label className='text-gray-700 block my-1'>Qo'shimcha:</label>
-              <input className='border-2 border-gray-600 outline-none rounded-md py-1 px-2 focus:bg-blue-50 focus:border-gray-500' type="text" placeholder="Qo'shimcha" {...register("additional")}/>
-            </span>
+      <h2 className='text-2xl font-bold pb-6 ml-2'>Qayerdan</h2>
+      <div className='flex flex-wrap justify-center items-center'>
+        <span className='w-full text-center flex ml-5 gap-4 items-center'>
+          <label className='text-gray-700 font-bold text-[40px] '><FaHome /></label>
+          <select {...register("district")} className='border bg-white rounded-md p-2 border-gray-400 outline-none cursor-pointer w-[300px]'>
+            <option>Hudud tanlang</option>
+            <option value="Yunusobod">Yunusobod</option>
+            <option value="Sergeli">Sergeli</option>
+            <option value="Chilonzor">Chilonzor</option>
+            <option value="Yashnobod">Yashnobod</option>
+            <option value="Mirzo Ulug'bek">Mirzo Ulug'bek</option>
+            <option value="Shayxontohur">Shayxontohur</option>
+            <option value="Mirobod">Mirobod</option>
+          </select>
+        </span>
 
-        </div>
+        <FloatingInput label="Ko'cha" name="street" register={register} width='w-[120px]' />
+        <FloatingInput label="Uy" name="home" register={register} type="number" width="w-[120px]" />
+        <FloatingInput label="Kvartira" name="apartment" register={register} type="number" width="w-[120px]" />
+        <span className='border border-gray-400 w-[420px] rounded-md px-2 bg-[white] my-2'>
+          <label className='block py-1 text-gray-800'>Yetkazib beruvchiga qo'shimcha ma'lumot</label>
+          <textarea rows={1} className='outline-none w-full text-gray-700'></textarea>
+        </span>
+      </div>
     </section>
   )
 }
