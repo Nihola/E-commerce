@@ -7,7 +7,7 @@ import Favorites from './../pages/favorites/Favorites';
 import Home from "../pages/home/Home";
 import ProductListPage from "../pages/product/ProductList";
 
-
+import SinglePage from "../pages/singlepage/SinglePage";
 export const Router = createBrowserRouter([
   {
     path: "/",
@@ -36,7 +36,7 @@ export const Router = createBrowserRouter([
       },
       {
         path:"product/:id",
-        element: <Singlepage/>
+        element:<SinglePage/>
       },
       {
         path: "/products/:tag",
