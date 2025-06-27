@@ -1,6 +1,8 @@
 import { products } from './../../products-data';
 import ProductSection from './../../components/ProductSection';
 import HomeBanner from '../../components/HomeBanner';
+import SpecialOffers from '../../components/SpecialOffers';
+import StoresMap from '../../components/StoresMap';
 const promotions = products.filter(p => p.tag === "Promotions");
 const newArrivals = products.filter(p => p.tag === "New Arrivals");
 const previouslyBought = products.filter(p => p.tag === "Previously Bought");
@@ -15,7 +17,14 @@ function HomePage() {
         <ProductSection title="🔥 Promotions" data={promotions} tag="Promotions" />
         <ProductSection title="🆕 New Arrivals" data={newArrivals} tag="New Arrivals" />
         <ProductSection title="🛍️ Previously Bought" data={previouslyBought} tag="Previously Bought" />
+
+        <SpecialOffers />
+        <StoresMap/>
+
+
       </div>
+
+       
     </div>
     </div>
 
