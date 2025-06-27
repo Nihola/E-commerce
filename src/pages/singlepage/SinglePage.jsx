@@ -47,7 +47,7 @@ setActiveImg(img)
 
 return (
 <div className=" bg-[#F9F4E2] py-[60px] ">
-  <div className="container  mx-auto px-10  flex flex-col  gap-3">
+  <div className="container max-w-[1200px]  mx-auto px-10  flex flex-col  gap-3">
     <div className="flex text-center">
       <h2 className='font-[Rubik] font-[600] text-[20px] lg:text-[24px] '>{singleCard.name},{singleCard?.description} </h2>
     </div>
@@ -110,8 +110,8 @@ return (
         </button>
       </div>
     </div>
-    <div className=' flex flex-col lg:flex-row gap-0.5 lg:gap-8 '>
-      <div className="w-full flex flex-col lg:flex-row gap-5   lg:h-[400px]">
+    <div className=' flex flex-col lg:flex-row gap-8 '>
+      <div className="w-full flex flex-col lg:flex-row gap-5 lg:h-[400px]">
         <div className="flex lg:flex-col sm:gap-1.5 lg:gap-2 justify-between w-full  lg:w-[120px]">
           {singleCard.images.slice(0, 4).map((img, index) => (
           <img key={index} src={img} alt={`img-${index}`} onClick={()=> handleClick(img)}
@@ -132,7 +132,7 @@ return (
         </div>
       </div>
 
-      <div className="w-full lg:w-1/2 flex flex-col gap-1 ">
+      <div className="w-full lg:w-1/2 flex flex-col gap-6 ">
         <div className="">
           <div className="flex items-center w-full  justify-between">
             <div className="flex w-[140px] flex-col ">

@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Cart from "../pages/cart/Cart";
-import Category from "../pages/category/Category";
+import Category from "../pages/category/Category";//update*
 import Delivery from "../pages/delivery/Delivery";
-import Favorites from "./../pages/favorites/Favorites";
+import Favorites from './../pages/favorites/Favorites';
 import Home from "../pages/home/Home";
 import Categoryfilter from "../pages/category/Categoryfilter";
 
@@ -11,7 +11,6 @@ import Categoryfilter from "../pages/category/Categoryfilter";
 import ProductListPage from "../pages/product/ProductList";
 import SinglePage from "../pages/singlePage/singlePage";
 
- 
 
 
 export const Router = createBrowserRouter([
@@ -31,10 +30,6 @@ export const Router = createBrowserRouter([
         path: "/category",
         element: <Category />,
       },
-      {
-                       path: "/category/:id", // ✅ this enables useParams
-                      element: <Categoryfilter />
-                  },
 
       {
         path: "/delivery",
@@ -45,7 +40,6 @@ export const Router = createBrowserRouter([
         element: <Favorites />,
       },
       {
-
         path:"product/:id",
         element: <SinglePage/>
       },
