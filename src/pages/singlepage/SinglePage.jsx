@@ -47,11 +47,11 @@ setActiveImg(img)
 
 return (
 <div className=" bg-[#F9F4E2] py-[60px] ">
-  <div className="container max-w-[1200px]  mx-auto px-10  flex flex-col  gap-3">
+  <div className="container max-w-[1200px]  mx-auto   flex flex-col  gap-3">
     <div className="flex text-center">
-      <h2 className='font-[Rubik] font-[600] text-[20px] lg:text-[24px] '>{singleCard.name},{singleCard?.description} </h2>
+      <h2 className='font-[Rubik] font-[600] px-10 text-[20px] lg:text-[24px] '>{singleCard.name},{singleCard?.description} </h2>
     </div>
-    <div className="flex lg:gap-10  gap-5  items-center">
+    <div className="flex lg:gap-10 px-10  gap-5  items-center">
       <p className='font-[Rubik] text-[10px] lg:text-[16px] '>арт. 371431</p>
       <div className="flex  group-hover:scale-105">
         {Array.from({ length: 5 }).map((_, i) => (
@@ -71,7 +71,7 @@ return (
           <span className="text-sm hidden md:inline ">Поделиться</span>
         </button>
         {showShare && (
-        <div className="absolute z-10 mt-2 p-4 bg-white border rounded-lg shadow-lg flex flex-col gap-3 min-w-[180px]">
+        <div className="absolute z-10 top-[350px] lg:top-[190px] left-[150px] lg:left-[500px] mt-2 p-4 bg-white border rounded-lg shadow-lg flex flex-col gap-3 min-w-[180px]">
           <button onClick={()=> setShowShare(false)}
             className="absolute top-1 right-1 text-gray-500 hover:text-red-500"
             >
@@ -110,7 +110,7 @@ return (
         </button>
       </div>
     </div>
-    <div className=' flex flex-col lg:flex-row gap-8 '>
+    <div className=' flex flex-col lg:flex-row px-10 gap-8 '>
       <div className="w-full flex flex-col lg:flex-row gap-5 lg:h-[400px]">
         <div className="flex lg:flex-col sm:gap-1.5 lg:gap-2 justify-between w-full  lg:w-[120px]">
           {singleCard.images.slice(0, 4).map((img, index) => (
@@ -132,7 +132,7 @@ return (
         </div>
       </div>
 
-      <div className="w-full lg:w-1/2 flex flex-col gap-6 ">
+      <div className="w-full lg:w-1/2 flex flex-col  ">
         <div className="">
           <div className="flex items-center w-full  justify-between">
             <div className="flex w-[140px] flex-col ">
@@ -217,7 +217,7 @@ return (
         </div>
       </div>
     </div>
-    <div className="max-w-5/2 mx-auto px-4 mt-10 sm:px-6 md:px-8">
+    <div className="max-w-5/2 mx-auto  mt-10 ">
       <ProductSection title="Акции" data={promotions} tag="Promotions" />
     </div>
   </div>
