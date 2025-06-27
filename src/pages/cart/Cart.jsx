@@ -1,5 +1,6 @@
+// Cart.jsx
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { GoChevronRight } from "react-icons/go";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,41 +8,24 @@ import { useCartStore } from "../../store/cartStore";
 
 export default function Cart() {
   const { cartItems, increment, decrement, clearSelected } = useCartStore();
-
   const [selectedItems, setSelectedItems] = useState([]);
+  const navigate = useNavigate();
 
   const parsePrice = (price) => {
     if (typeof price === "number") return price;
-
     if (typeof price === "string") {
       const numericString = price.replace(/[^\d.,]/g, "").replace(",", ".");
       const parsed = parseFloat(numericString);
       return isNaN(parsed) ? 0 : parsed;
     }
-
     return 0;
   };
 
-  const formatPrice = (price) => {
-    return price.toLocaleString("ru-RU", {
+  const formatPrice = (price) =>
+    price.toLocaleString("ru-RU", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
-  };
-
-  const handleOrder = () => {
-    if (cartItems.length === 0) {
-      toast.warning("Savat bo'sh!", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-      return;
-    }
-    toast.success("Zakaz berildi!", {
-      position: "top-right",
-      autoClose: 3000,
-    });
-  };
 
   const handleQuantityChange = (id, delta) => {
     if (delta > 0) increment(id);
@@ -76,6 +60,37 @@ export default function Cart() {
 
   const grandTotal = calculateTotal(cartItems);
 
+  const handleOrder = () => {
+    if (selectedItems.length === 0) {
+      toast.warning("Iltimos, kamida 1 mahsulot tanlang!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      return;
+    }
+
+    const selectedProducts = cartItems
+      .filter((item) => selectedItems.includes(item.id))
+      .map((item) => ({
+        id: item.id,
+        name: item.name,
+        quantity: Number(item.quantity),
+        price: parsePrice(item.disprice || item.price),
+      }));
+
+    const total = selectedProducts.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
+    navigate("/delivery", {
+      state: {
+        products: selectedProducts,
+        total,
+      },
+    });
+  };
+
   return (
     <div className="bg-yellow-50 min-h-screen pb-10">
       <div className="flex items-center gap-3 px-4 py-3 sm:px-6 md:px-10">
@@ -83,8 +98,9 @@ export default function Cart() {
           Asosiy
         </NavLink>
         <GoChevronRight />
-        <NavLink to={"/"} className="text-lg sm:text-xl md:text-2xl">Products</NavLink>
-        {/* <GoChevronRight /> */}
+        <NavLink to="/" className="text-lg sm:text-xl md:text-2xl">
+          Products
+        </NavLink>
       </div>
 
       <h1 className="text-xl sm:text-2xl md:text-3xl py-3 px-4 sm:px-6 md:px-10">
@@ -151,7 +167,9 @@ export default function Cart() {
                       type="checkbox"
                       className="w-4 h-4 mr-3 cursor-pointer"
                       checked={selectedItems.includes(item.id)}
-                      onChange={(e) => handleSelect(item.id, e.target.checked)}
+                      onChange={(e) =>
+                        handleSelect(item.id, e.target.checked)
+                      }
                     />
                     <img
                       src={item.image || item.images?.[0] || "placeholder.jpg"}
@@ -179,46 +197,20 @@ export default function Cart() {
                   <div className="flex items-center gap-6">
                     <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
                       <button
-                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5"
                         onClick={() => handleQuantityChange(item.id, -1)}
                         disabled={quantity <= 1}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M20 12H4"
-                          />
-                        </svg>
+                        -
                       </button>
                       <span className="px-4 min-w-[30px] text-center font-medium text-gray-700">
                         {quantity}
                       </span>
                       <button
-                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5 transition-colors duration-200"
+                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5"
                         onClick={() => handleQuantityChange(item.id, 1)}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 4v16m8-8H4"
-                          />
-                        </svg>
+                        +
                       </button>
                     </div>
                     <span className="font-semibold text-lg min-w-[90px] text-right text-gray-800">
@@ -250,14 +242,12 @@ export default function Cart() {
                   </span>
                 </div>
                 <ToastContainer />
-                <NavLink to="/delivery">
-                  <button
-                    className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded w-full mt-4 transition-colors"
-                    onClick={handleOrder}
-                  >
-                    Zakaz berish
-                  </button>
-                </NavLink>
+                <button
+                  className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded w-full mt-4 transition-colors"
+                  onClick={handleOrder}
+                >
+                  Zakaz berish
+                </button>
               </div>
             </div>
           </div>
