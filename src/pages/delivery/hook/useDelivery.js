@@ -1,9 +1,8 @@
-// src/hooks/useDeliveryData.js
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 
 export const useDeliveryData = () => {
-  const { register, handleSubmit, reset } = useForm()
+  const { register, handleSubmit, reset, setValue, watch } = useForm()
 
   const sendMessage = async (data) => {
     const message = `
@@ -12,7 +11,6 @@ export const useDeliveryData = () => {
 🏘 <b>Ko'cha:</b> ${data.street}, Uy: ${data.home}, Kvartira: ${data.apartment}
 📝 <b>Qo'shimcha:</b> ${data.additional || 'yo‘q'}
 📅 <b>Sana:</b> ${data.date}
-⏰ <b>Vaqt:</b> ${data.times}
 📞 <b>Tel:</b> ${data.phone}
     `
 
@@ -51,5 +49,7 @@ export const useDeliveryData = () => {
     handleSubmit,
     reset,
     sendMessage,
+    setValue,
+    watch,
   }
 }
