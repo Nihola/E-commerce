@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { products } from '../../products-data'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useCartStore } from '../../store/cartStore';
 import { favoriteStore } from '../../store/favoriteStore';
 import { FaCommentAlt, FaFacebookF, FaHeart, FaInstagram, FaStar, FaTelegramPlane, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { FiHeart, FiShare2 } from 'react-icons/fi';
 import { IoClose } from 'react-icons/io5';
+import ProductSection from '../../components/ProductSection';
 
 function SinglePage() {
 const {isInCart,getQuantity,decrement,increment,addToCart} = useCartStore();
@@ -15,6 +16,7 @@ const inCart = singleCard ? isInCart(singleCard.id) : false
 const quantity = singleCard ? getQuantity(singleCard.id) : 0
 const {id} = useParams();
 const [image,setImage] = useState("");
+const promotions = products.filter(p => p.tag === "Promotions");
 const [activeImg, setActiveImg] = useState(singleCard?.images?.[0]);
 const [showShare, setShowShare] = useState(false);
 
@@ -127,10 +129,10 @@ return (
     </div>
     <div className=' flex flex-col lg:flex-row gap-8 '>
       <div className="w-full lg:w-1/2 flex flex-col lg:flex-row gap-3 h-auto lg:h-[400px]">
-        <div className="flex md:flex-row lg:flex-col lg:gap-3 md:gap-4 w-full lg:w-[150px]">
+        <div className="flex md:flex-row lg:flex-col lg:gap-3 md:gap-4 gap-5 w-full lg:w-[150px]">
           {singleCard.images.map((img, index) => (
           <img key={index} src={img} alt={`img-${index}`}
-            className={`w-[100px] sm:w-[160px] md:w-[180px] lg:w-[200px] lg:h-[95px] rounded-[8px] object-cover cursor-pointer border ${activeImg === img ?  "border-blue-500 scale-110" : "border-transparent"} `} onClick={()=>
+            className={`w-[143px] sm:w-[160px] md:w-[180px] lg:w-[200px] lg:h-[95px] rounded-[8px] object-cover cursor-pointer border ${activeImg === img ?  "border-blue-500 scale-110" : "border-transparent"} `} onClick={()=>
           handleClick(img)}
           />
           ))}
@@ -229,6 +231,9 @@ return (
           </div>
         </div>
       </div>
+    </div>
+    <div className="max-w-5/2 mx-auto px-4 mt-10 sm:px-6 md:px-8">
+      <ProductSection title="Акции" data={promotions} tag="Promotions" />
     </div>
   </div>
 </div>
