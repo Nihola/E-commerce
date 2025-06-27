@@ -3,7 +3,8 @@ import { products } from '../../products-data'
 import { useParams } from 'react-router-dom'
 import { useCartStore } from '../../store/cartStore';
 import { favoriteStore } from '../../store/favoriteStore';
-import { FaCommentAlt, FaFacebookF, FaHeart, FaInstagram, FaStar, FaTelegramPlane, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaCommentAlt, FaFacebookF, FaHeart, FaInstagram, FaStar, FaTelegramPlane, FaTwitter, FaYoutube } from
+'react-icons/fa';
 import { FiHeart, FiShare2 } from 'react-icons/fi';
 import { IoClose } from 'react-icons/io5';
 import ProductSection from '../../components/ProductSection';
@@ -25,8 +26,8 @@ useEffect(()=> {
 const updatecard = products.find(p => p.id.toString()=== id );
 setSingleCard(updatecard)
 if (updatecard?.images.length > 0) {
-  setImage(updatecard.images[0]);
-  setActiveImg(updatecard.images[0])
+setImage(updatecard.images[0]);
+setActiveImg(updatecard.images[0])
 }
 },[id])
 
@@ -46,13 +47,12 @@ setActiveImg(img)
 
 return (
 <div className=" bg-[#F9F4E2] py-[60px] ">
-  <div className="container  mx-auto  flex flex-col  gap-3">
-    <div className="flex item">
-      <h2 className='font-[Rubik] font-[600] text-[24px] '>{singleCard.name}, </h2>
-      <h2 className='font-[Rubik] font-[600] text-[24px] '> {singleCard?.description}</h2>
+  <div className="container  mx-auto px-10  flex flex-col  gap-3">
+    <div className="flex text-center">
+      <h2 className='font-[Rubik] font-[600] text-[20px] lg:text-[24px] '>{singleCard.name},{singleCard?.description} </h2>
     </div>
-    <div className="flex gap-10   items-center">
-      <p>арт. 371431</p>
+    <div className="flex lg:gap-10  gap-5  items-center">
+      <p className='font-[Rubik] text-[10px] lg:text-[16px] '>арт. 371431</p>
       <div className="flex  group-hover:scale-105">
         {Array.from({ length: 5 }).map((_, i) => (
         <FaStar key={i} className={`text-sm ${i < Math.round(singleCard.rating) ? "text-orange-400" : "text-gray-300"
@@ -61,59 +61,42 @@ return (
       </div>
       <div className="flex items-center text-gray-600 text-sm gap-1 hover:text-blue-600 cursor-pointer">
         <FaCommentAlt size={14} />
-        <span>3 отзыва</span>
+        <span className='hidden md:inline'>3 отзыва</span>
       </div>
 
       <div className="">
-        <button onClick={() => setShowShare(!showShare)} className="flex items-center gap-2 text-[#414141] hover:text-blue-500">
+        <button onClick={()=> setShowShare(!showShare)} className="flex items-center gap-2 text-[#414141]
+          hover:text-blue-500">
           <FiShare2 size={18} />
-          <span className="text-sm">Поделиться</span>
+          <span className="text-sm hidden md:inline ">Поделиться</span>
         </button>
         {showShare && (
         <div className="absolute z-10 mt-2 p-4 bg-white border rounded-lg shadow-lg flex flex-col gap-3 min-w-[180px]">
-          <button
-            onClick={() => setShowShare(false)}
+          <button onClick={()=> setShowShare(false)}
             className="absolute top-1 right-1 text-gray-500 hover:text-red-500"
-          >
+            >
             <IoClose size={20} />
           </button>
-          <a
-            href="https://t.me/share/url?url=https://your-site.com"
-            target="_blank"
-            className="flex items-center gap-2 hover:text-blue-500"
-          >
+          <a href="https://t.me/share/url?url=https://your-site.com" target="_blank"
+            className="flex items-center gap-2 hover:text-blue-500">
             <FaTelegramPlane /> Telegram
           </a>
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            className="flex items-center gap-2 hover:text-pink-500"
-          >
+          <a href="https://www.instagram.com/" target="_blank" className="flex items-center gap-2 hover:text-pink-500">
             <FaInstagram /> Instagram
           </a>
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            className="flex items-center gap-2 hover:text-red-500"
-          >
+          <a href="https://www.youtube.com/" target="_blank" className="flex items-center gap-2 hover:text-red-500">
             <FaYoutube /> YouTube
           </a>
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://your-site.com"
-            target="_blank"
-            className="flex items-center gap-2 hover:text-blue-700"
-          >
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-site.com" target="_blank"
+            className="flex items-center gap-2 hover:text-blue-700">
             <FaFacebookF /> Facebook
           </a>
-          <a
-            href="https://twitter.com/intent/tweet?url=https://your-site.com"
-            target="_blank"
-            className="flex items-center gap-2 hover:text-sky-500"
-          >
+          <a href="https://twitter.com/intent/tweet?url=https://your-site.com" target="_blank"
+            className="flex items-center gap-2 hover:text-sky-500">
             <FaTwitter /> Twitter
           </a>
         </div>
-      )}
+        )}
       </div>
 
       <div className="">
@@ -123,53 +106,55 @@ return (
           ) : (
           <FiHeart size={20} className="text-gray-400" />
           )}
-          В избраное
+          <span className='hidden md:inline'>В избраное</span>
         </button>
       </div>
     </div>
     <div className=' flex flex-col lg:flex-row gap-8 '>
-      <div className="w-full lg:w-1/2 flex flex-col lg:flex-row gap-3 h-auto lg:h-[400px]">
-        <div className="flex md:flex-row lg:flex-col lg:gap-3 md:gap-4 gap-5 w-full lg:w-[150px]">
-          {singleCard.images.map((img, index) => (
-          <img key={index} src={img} alt={`img-${index}`}
-            className={`w-[143px] sm:w-[160px] md:w-[180px] lg:w-[200px] lg:h-[95px] rounded-[8px] object-cover cursor-pointer border ${activeImg === img ?  "border-blue-500 scale-110" : "border-transparent"} `} onClick={()=>
-          handleClick(img)}
+      <div className="w-full flex flex-col lg:flex-row gap-5 lg:h-[400px]">
+        <div className="flex lg:flex-col sm:gap-1.5 lg:gap-2 justify-between w-full  lg:w-[120px]">
+          {singleCard.images.slice(0, 4).map((img, index) => (
+          <img key={index} src={img} alt={`img-${index}`} onClick={()=> handleClick(img)}
+          className={`w-[65px] sm:w-[120px] md:w-[150px] lg:w-[180px] h-70px lg:h-[90px]  object-cover rounded-lg
+          cursor-pointer border transition-transform duration-300 ease-in-out hover:scale-105 ${
+          activeImg === img ? "border-blue-500 scale-110" : "border-transparent"
+          }`}
           />
           ))}
         </div>
-        <div className="relative w-full h-[300px] sm:h-[350px] md:h-[400px]">
+        <div className="relative flex-1 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[400px]">
           {singleCard.discount !== "0%" && (
           <div className="absolute top-3 left-3 bg-[#FF6633] text-white text-xs font-bold px-2 py-1 rounded">
             -{singleCard.discount}
           </div>
-          )}  
-          <img className='relative rounded-[8px] w-full  h-[300px] sm:h-[350px] md:h-[400px] flex-shrink-0"' src={image}
-            alt="photo" />
+          )}
+          <img src={image} alt="Selected" className="w-full h-full object-cover rounded-xl shadow-md" />
         </div>
       </div>
+
       <div className="w-full lg:w-1/2 flex flex-col gap-6 ">
         <div className="">
-          <div className="flex items-center  justify-between gap-[320px] ">
-            <div className="flex flex-col items-center">
+          <div className="flex items-center w-full  justify-between">
+            <div className="flex w-[140px] flex-col ">
               <p
-                className="font-[Rubik] text-[#606060] font-normal mt-4 text-[24px] leading-[150%] tracking-[0%] align-middle">
+                className="font-[Rubik] text-[#606060] font-normal mt-4 text-[18px] lg:text-[24px] leading-[150%] tracking-[0%] align-middle">
                 {singleCard?.price}
               </p>
               <span
-                className='font-[Rubik] text-[#606060] ml-2 font-normal text-[12px] leading-[150%] tracking-[0%] align-middle '>
+                className='font-[Rubik] text-[#606060]  font-normal text-[10px] lg:text-[12px] leading-[150%] tracking-[0%] align-middle '>
                 Обычная цена
               </span>
             </div>
-            <div className="flex flex-col items-center mt-3 ">
-              <p className='font-[Rubik] text-[#414141] font-[700] leading-10 text-[40px] tracking-[0%] align-middle'>
+            <div className="flex flex-col justify-center  mt-3 ">
+              <p className='font-[Rubik] text-[#414141] font-[700] leading-10 text-[30px] lg:text-[40px] tracking-[0%] align-middle'>
                 {singleCard?.disprice}
               </p>
               <div className="flex items-center gap-2">
                 <span
-                  className='font-[Rubik] text-[#8F8F8F]  ml-6 font-normal text-[12px] leading-[60%] tracking-[0%] align-middle '>
+                  className='font-[Rubik] text-[#8F8F8F]  font-normal text-[10px] lg:text-[12px] leading-[100%] tracking-[0%] align-middle '>
                   С картой Северяночки
                 </span>
-                <img src="/images/tovar/info.png" alt="photo" />
+                <img className='w-[15px] lg:w-[20px] ' src="/images/tovar/info.png" alt="photo" />
               </div>
             </div>
           </div>
