@@ -74,14 +74,14 @@ export default function Header() {
   }, [search]);
 
   return (
-    <div className="relative w-full bg-white shadow-md">
-      <div className="container mx-auto flex items-center justify-between p-2 gap-3 flex-wrap">
+    <div className="container mx-auto p-2 w-full relative max-w-[1200px] bg-white shadow-md">
+      <div className="  flex items-center justify-between  gap-3 flex-wrap">
         
         <div className="flex items-center gap-2">
           <Link to="/">
             <div className="flex items-center">
               <img src={Logo} alt="logo" />
-              <div className="ml-1 font-semibold text-sm">СЕВЕРЯНОЧКА</div>
+              <div className="mx-4 font-semibold text-sm ">СЕВЕРЯНОЧКА</div>
             </div>
           </Link>
           <button
@@ -94,7 +94,7 @@ export default function Header() {
         </div>
 
         
-        <div className="relative max-w-[600px] w-full">
+        <div className="relative max-w-[500px] w-full mx-2">
           <div className="relative w-full">
             <input
               type="text"
@@ -114,6 +114,7 @@ export default function Header() {
               <FaMicrophone />
             </button>
           </div>
+
 
           {search && (
             <div className="absolute z-10 w-full flex flex-col top-[50px] bg-white p-1.5 max-h-[300px] overflow-y-auto shadow-lg rounded-md">
@@ -144,7 +145,7 @@ export default function Header() {
             onClick={goToFavorites}
             className="relative flex flex-col items-center text-sm text-gray-700 cursor-pointer hover:text-red-500 transition"
           >
-            <FaHeart className="text-xl mb-1" />
+            <FaHeart className="text-xl " />
             {favorites.length > 0 && (
               <span className="absolute top-0 right-4 translate-x-1/2 -translate-y-1/2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-[2px] rounded-full">
                 {favorites.length}
@@ -212,3 +213,4 @@ export default function Header() {
     </div>
   );
 }
+
