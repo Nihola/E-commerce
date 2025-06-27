@@ -78,10 +78,10 @@ export const products = [
       disprice: "40.00$",
       rating: 3.5, discount: 50 + "%",
       tag: "Promotions",
-      images: ["./images/products/6.png",
-       "./images/products/7.png",
-       "./images/products/8.png",
-       "./images/products/9.png"] },
+      images: ["/images/products/6.png",
+       "/images/products/7.png",
+       "/images/products/8.png",
+       "/images/products/9.png"] },
 
   {
      id: 7, 

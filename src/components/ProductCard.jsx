@@ -25,7 +25,8 @@ export default function ProductCard({ product }) {
       
       <button
         onClick={toggleFavorite}
-        className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-full p-1 shadow"
+        className={`absolute top-3 right-3 transition-opacity bg-white rounded-full p-1 shadow ${isFavorite(product.id) ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+          }`}
       >
         {isFavorite(product.id) ? (
           <FaHeart size={18} className="text-red-500" />
@@ -33,6 +34,7 @@ export default function ProductCard({ product }) {
           <FiHeart size={18} className="text-gray-400" />
         )}
       </button>
+
 
    
       {product.discount !== "0%" && (
