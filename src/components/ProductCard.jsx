@@ -16,6 +16,8 @@ export default function ProductCard({ product }) {
   };
   const navigate = useNavigate()
   const handleSubmit = (id)=> {
+    
+    
     navigate(`/product/${id}`)
   }
 
@@ -48,7 +50,7 @@ export default function ProductCard({ product }) {
         onClick={()=>handleSubmit(product.id)}
         src={product.images[0]}
         alt={product.name}
-        className="w-full h-40 object-cover rounded-lg mt-3 mb-4 transition-transform duration-300 group-hover:scale-94"
+        className="w-full h-40 cursor-pointer object-cover rounded-lg mt-3 mb-4 transition-transform duration-300 group-hover:scale-94"
       />
 
    
@@ -82,7 +84,7 @@ export default function ProductCard({ product }) {
       {!inCart ? (
         <button
           onClick={() => addToCart(product)}
-          className="w-full bg-[#FF7F3F] text-white font-bold text-sm py-2 mt-3 rounded-xl hover:bg-[#ff6826] transition"
+          className="w-full cursor-pointer bg-[#FF7F3F] text-white font-bold text-sm py-2 mt-3 rounded-xl hover:bg-[#ff6826] transition"
         >
           В корзину
         </button>
@@ -90,7 +92,7 @@ export default function ProductCard({ product }) {
           <div className="flex justify-around rounded-3xl w-full mt-3">
             <button
               onClick={() => decrement(product.id)}
-              className="bg-lime-500 text-black text-xl w-1/2  py-2 px-4  hover:bg-lime-600  rounded-l-2xl"
+              className="bg-lime-500 cursor-pointer text-black text-xl w-1/2  py-2 px-4  hover:bg-lime-600  rounded-l-2xl"
             >
               −
             </button>
@@ -99,7 +101,7 @@ export default function ProductCard({ product }) {
             </span>
             <button
               onClick={() => increment(product.id)}
-              className="bg-lime-500 text-black text-xl  w-1/2  py-2 px-4 rounded-r-2xl hover:bg-lime-600"
+              className="bg-lime-500 cursor-pointer text-black text-xl  w-1/2  py-2 px-4 rounded-r-2xl hover:bg-lime-600"
             >
               +
             </button>
