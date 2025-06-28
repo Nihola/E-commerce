@@ -1,3 +1,4 @@
+// Cart.jsx
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { GoChevronRight } from "react-icons/go";
@@ -20,38 +21,11 @@ export default function Cart() {
     return 0;
   };
 
-  const formatPrice = (price) => {
-    return price.toLocaleString("ru-RU", {
+  const formatPrice = (price) =>
+    price.toLocaleString("ru-RU", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
-  };
-
-  const handleOrder = () => {
-    if (cartItems.length === 0) {
-      toast.warning("Savat bo'sh!", {
-        position: "top-right",
-        autoClose: 3000,
-      });
-      return;
-    }
-    toast.success("Zakaz berildi!", {
-      position: "top-right",
-      autoClose: 3000,
-    });
-
-    const selectedItemsData = cartItems.filter((item) =>
-      selectedItems.includes(item.id)
-    );
-
-    const selectedTotal = calculateTotal(selectedItemsData);
-
-    navigate("/delivery", {
-      state: {
-        selectedTotal: selectedTotal,
-      },
-    });
-  };
 
   const handleQuantityChange = (id, delta) => {
     if (delta > 0) increment(id);
@@ -85,6 +59,37 @@ export default function Cart() {
   );
 
   const grandTotal = calculateTotal(cartItems);
+
+  const handleOrder = () => {
+    if (selectedItems.length === 0) {
+      toast.warning("Iltimos, kamida 1 mahsulot tanlang!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      return;
+    }
+
+    const selectedProducts = cartItems
+      .filter((item) => selectedItems.includes(item.id))
+      .map((item) => ({
+        id: item.id,
+        name: item.name,
+        quantity: Number(item.quantity),
+        price: parsePrice(item.disprice || item.price),
+      }));
+
+    const total = selectedProducts.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+
+    navigate("/delivery", {
+      state: {
+        products: selectedProducts,
+        total,
+      },
+    });
+  };
 
   return (
     <div className="bg-yellow-50 min-h-screen pb-10">
@@ -162,7 +167,9 @@ export default function Cart() {
                       type="checkbox"
                       className="w-4 h-4 mr-3 cursor-pointer"
                       checked={selectedItems.includes(item.id)}
-                      onChange={(e) => handleSelect(item.id, e.target.checked)}
+                      onChange={(e) =>
+                        handleSelect(item.id, e.target.checked)
+                      }
                     />
                     <img
                       src={item.image || item.images?.[0] || "placeholder.jpg"}
@@ -190,17 +197,17 @@ export default function Cart() {
                   <div className="flex items-center gap-6">
                     <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
                       <button
-                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5"
                         onClick={() => handleQuantityChange(item.id, -1)}
                         disabled={quantity <= 1}
                       >
-                        –
+                        -
                       </button>
                       <span className="px-4 min-w-[30px] text-center font-medium text-gray-700">
                         {quantity}
                       </span>
                       <button
-                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5 transition-colors duration-200"
+                        className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-3 py-1.5"
                         onClick={() => handleQuantityChange(item.id, 1)}
                       >
                         +

@@ -20,7 +20,7 @@ export default function Delivery() {
           <WhenDelivery register={register} />
         </div>
         <div>
-          <SumDelivery handleSubmit={handleSubmit} sendMessage={sendMessage} />
+          <SumDelivery handleSubmit={handleSubmit} sendMessage={sendMessage} register={register} />
         </div>
       </form>
     </section>

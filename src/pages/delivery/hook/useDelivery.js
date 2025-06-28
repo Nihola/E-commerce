@@ -7,6 +7,9 @@ export const useDeliveryData = () => {
   const sendMessage = async (data) => {
     const message = `
 🛒 <b>Yangi buyurtma</b>:
+🍕 <b>Mahsulot soni:</b> ${data.product}
+💵<b>Narxi:$</b> ${data.price}
+💵 <b>Umumiy summa:$</b> ${data.prices}
 📍 <b>Hudud:</b> ${data.district}
 🏘 <b>Ko'cha:</b> ${data.street}, Uy: ${data.home}, Kvartira: ${data.apartment}
 📝 <b>Qo'shimcha:</b> ${data.additional || 'yo‘q'}
@@ -33,7 +36,6 @@ export const useDeliveryData = () => {
         position: 'top-right',
         autoClose: 3000,
       })
-
       reset()
     } catch (error) {
       toast.error(' Xatolik yuz berdi!', {
