@@ -201,13 +201,15 @@ export default function Header() {
           ].map((title, index) => (
             <Link
               key={index}
-              to="/category"
+              to={`/category/${index+1
+              }`}
               onClick={() => setIsCatalogOpen(false)}
               className="font-semibold hover:text-orange-400"
             >
               {title}
             </Link>
           ))}
+          <Link onClick={() => setIsCatalogOpen(false)} className="font-semibold hover:text-orange-400" to="/category">Показать все категории</Link>
         </div>
       )}
     </div>
