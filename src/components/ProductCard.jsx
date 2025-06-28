@@ -16,6 +16,8 @@ export default function ProductCard({ product }) {
   };
   const navigate = useNavigate()
   const handleSubmit = (id)=> {
+    
+    
     navigate(`/product/${id}`)
   }
 

@@ -41,6 +41,10 @@ export const Router = createBrowserRouter([
         element: <Favorites />,
       },
       {
+        path: "/category/:id",
+        element: <Categoryfilter />,
+      },//filter
+      {
         path:"product/:id",
         element: <SinglePage/>
       },

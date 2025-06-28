@@ -4,6 +4,7 @@ import { products } from '../../products-data';
 import ProductSection from './../../components/ProductSection';
 import ProductCard from "./../../components/ProductCard";
 import { parsePrice } from './parsePrice';
+
 const Categoryfilter = () => {
     const { id } = useParams();
     const [visibleProducts,setProduct]=useState([])
@@ -129,22 +130,23 @@ const productPrice = parsePrice(product.price); // Преобразование 
 return productPrice >= minPrice && productPrice <= maxPrice;
 });
 setProduct(filtered);}
-},[minPrice, maxPrice,visibleProducts, setProduct])
+},[minPrice, maxPrice])
 
 
 
   return (
     <>
-    <div className="bg-[#FFF3E9] py-6">
-    <div className='container mx-auto'>
-        <div className='flex '>
-            <aside className='w-[300px]'><div>
-                <div><p>Фильтр</p></div>
-                <div className="p-4">
-      <div className="flex flex-col gap-4">
-        {/* Ползунок для минимальной цены */}
-        <div>
-          <label htmlFor="minPrice" className="block text-sm font-medium text-gray-700">
+    <div className="bg-[#FFF3E9] py-8">
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row gap-8">
+      
+      {/* Боковая панель фильтра */}
+      <aside className="w-full lg:w-[300px] bg-white rounded-xl p-6 shadow">
+        <h2 className="text-lg font-semibold mb-4">Фильтр</h2>
+
+        {/* Минимальная цена */}
+        <div className="mb-4">
+          <label htmlFor="minPrice" className="block text-sm font-medium text-gray-700 mb-1">
             Минимальная цена: {minPrice} ₽
           </label>
           <input
@@ -154,13 +156,13 @@ setProduct(filtered);}
             max="100"
             value={minPrice}
             onChange={(e) => setMinPrice(parseInt(e.target.value))}
-            className="w-full"
+            className="w-full accent-green-500"
           />
         </div>
 
-        {/* Ползунок для максимальной цены */}
-        <div>
-          <label htmlFor="maxPrice" className="block text-sm font-medium text-gray-700">
+        {/* Максимальная цена */}
+        <div className="mb-4">
+          <label htmlFor="maxPrice" className="block text-sm font-medium text-gray-700 mb-1">
             Максимальная цена: {maxPrice} ₽
           </label>
           <input
@@ -170,47 +172,29 @@ setProduct(filtered);}
             max="100"
             value={maxPrice}
             onChange={(e) => setMaxPrice(parseInt(e.target.value))}
-            className="w-full"
+            className="w-full accent-green-500"
           />
         </div>
 
-        {/* Отображение выбранного диапазона цен */}
+        {/* Диапазон */}
         <div className="flex justify-between text-sm text-gray-600">
           <span>0 ₽</span>
           <span>100 ₽</span>
         </div>
-      </div>
-    </div>
-                </div></aside>
-    {/*<div className='grid grid-cols-3'>
-    {product.map((item)=>(
-        <div className='h-[350px] border-2 border-amber-600' key={item.id}>
-<div className=''><img className='mx-auto' src={item.images[0]} alt={item.name} /></div>
-<div className='flex justify-between items-center'><p>{item.price}</p><p>{item.disprice}</p></div>
-<div className='flex justify-between items-center'><p>С картой</p><p>Обычная</p></div>
-<p>{item.description}</p>
+      </aside>
 
-<button>В корзину</button>
+      {/* Список продуктов */}
+      <main className="flex-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {visibleProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
-    ))
-    }</div>*/}
- <div>
-    
-      <div className="bg-[#FFF3E9] py-6">
-      
-      <div className="max-w-5/2 mx-auto px-4 sm:px-6 md:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {visibleProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-      </div>
-    </div>
-    </div>
+      </main>
 
     </div>
-    </div>
-    </div>
+  </div>
+</div>
     </>
   )
 }
