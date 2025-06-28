@@ -9,8 +9,7 @@ import Categoryfilter from "../pages/category/Categoryfilter";
 import ProductListPage from "../pages/product/ProductList";
 import SinglePage from './../pages/singlepage/SinglePage';
 
-
-import SinglePage from "../pages/singlepage/SinglePage";
+ 
 export const Router = createBrowserRouter([
   {
     path: "/",
