@@ -29,44 +29,44 @@ export default function Category() {
       <div>
         <h1 className='text-4xl font-bold mb-6'>Каталог</h1>
         <div>
-          <div className='flex flex-wrap justify-around gap-3'>
-            <NavLink to="/category/1"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh] w-full' src={img1} alt="" /> <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+          <div className='flex flex-wrap justify-around gap-3 md:justify-center gap-5'>
+            <NavLink to="/category/1"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img1} alt="" /> <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Молоко, сыр, яйцо
             </div></div></NavLink>
-            <NavLink to="/category/2"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img2} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/2"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img2} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Хлеб
             </div></div></NavLink>
-            <NavLink to="/category/3"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img3} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/3"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img3} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Фрукты и овощи
             </div></div></NavLink>
-            <NavLink to="/category/4"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img4} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/4"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img4} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Замороженные продукты
             </div></div></NavLink>
-            <NavLink to="/category/5"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img5} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/5"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img5} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Напитки
             </div></div></NavLink>
-            <NavLink to="/category/6"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img6} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/6"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img6} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Кондитерские изделия
             </div></div></NavLink>
-            <NavLink to="/category/7"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img7} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/7"> <div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img7} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Чай, кофе
             </div></div></NavLink>
-            <NavLink to="/category/8"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img8} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/8"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img8} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Бакалея
             </div></div></NavLink>
-            <NavLink to="/category/9"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img9} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/9"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img9} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Здоровое питание
             </div></div></NavLink>
-            <NavLink to="/category/10"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img10} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/10"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img10} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Зоотовары
             </div></div></NavLink>
-            <NavLink to="/category/11"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img11} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/11"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img11} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Детское питание
             </div></div></NavLink>
-            <NavLink to="/category/12"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img12} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/12"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img12} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Мясо, птица, колбаса
             </div></div></NavLink>
-            <NavLink to="/category/13"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='h-[20vh]' src={img13} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
+            <NavLink to="/category/13"><div className='relative rounded-lg overflow-hidden shadow-md '><img className='sm:h-[20vh] md:h-[22vh] lg:h-[25vh]' src={img13} alt="" /><div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-green-600 to-transparent pt-20 p-3 text-white text-sm font-semibold hover:from-red-400">
             Непродовольственные товары
             </div></div></NavLink>
           </div>
