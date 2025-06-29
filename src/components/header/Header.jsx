@@ -203,7 +203,7 @@ export default function Header() {
               key={index}
               to={`/category/${index+1
               }`}
-              onClick={() => setIsCatalogOpen(false)}
+              onClick={() => {setIsCatalogOpen(false)}}
               className="font-semibold hover:text-orange-400"
             >
               {title}
