@@ -74,7 +74,7 @@ export default function Header() {
   }, [search]);
 
   return (
-    <div className="container mx-auto p-2 w-full relative max-w-[1200px] bg-white shadow-md">
+    <div className="container mx-auto py-2 px-4 w-full relative max-w-[1200px] ">
       <div className="  flex items-center justify-between  gap-3 flex-wrap">
         
         <div className="flex items-center gap-2">
