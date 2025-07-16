@@ -1,0 +1,9 @@
+.category_aside {
+  height: 880px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .category_aside {
+    height: auto;
+  }
+}
