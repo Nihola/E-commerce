@@ -8,8 +8,6 @@ import Home from "../pages/home/Home";
 import Categoryfilter from "../pages/category/Categoryfilter";
 import ProductListPage from "../pages/product/ProductList";
 import SinglePage from "../pages/singlepage/SinglePage";
-
-
 export const Router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +34,10 @@ export const Router = createBrowserRouter([
         path: "/favorites",
         element: <Favorites />,
       },
+      {
+        path: "/category/:id",
+        element: <Categoryfilter />,
+      },//filter
       {
         path:"product/:id",
         element: <SinglePage/>

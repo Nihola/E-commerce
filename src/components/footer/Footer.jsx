@@ -5,8 +5,8 @@ import { FaInstagram, FaVk, FaFacebookF, FaOdnoklassniki, FaPhoneAlt } from "rea
 
 export default function Footer() {
   return (
-     <footer className="container mx-auto p-2 w-full relative max-w-[1200px] bg-[#fdf6e8]  text-gray-700 text-sm py-4 border-t border-gray-200 " >
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+     <footer className="  w-full relative  bg-[#fdf6e8] text-gray-500  text-sm py-4" >
+      <div className="container mx-auto p-2 max-w-[1200px] px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex flex-wrap justify-center gap-4 ">
           <Link className='hover:text-orange-400'>О компании</Link>
           <Link className='hover:text-orange-400' >Контакты</Link>

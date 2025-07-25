@@ -74,7 +74,7 @@ export default function Header() {
   }, [search]);
 
   return (
-    <div className="container mx-auto p-2 w-full relative max-w-[1200px] bg-white shadow-md">
+    <div className="container mx-auto py-2 px-4 w-full relative max-w-[1200px] ">
       <div className="  flex items-center justify-between  gap-3 flex-wrap">
         
         <div className="flex items-center gap-2">
@@ -201,13 +201,15 @@ export default function Header() {
           ].map((title, index) => (
             <Link
               key={index}
-              to="/category"
-              onClick={() => setIsCatalogOpen(false)}
+              to={`/category/${index+1
+              }`}
+              onClick={() => {setIsCatalogOpen(false)}}
               className="font-semibold hover:text-orange-400"
             >
               {title}
             </Link>
           ))}
+          <Link onClick={() => setIsCatalogOpen(false)} className="font-semibold hover:text-orange-400" to="/category">Показать все категории</Link>
         </div>
       )}
     </div>
