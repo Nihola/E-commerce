@@ -4,17 +4,11 @@ import { useEffect } from 'react'
 const FloatingInput = ({ label, name, register, type = "text", width = "w-[180px]" }) => {
   return (
     <div className={`relative ${width} m-2`}>
-      <input
-        type={type}
-        {...register(name)}
-        className="peer block px-2.5 pb-2.5 ml-1 cursor-pointer pt-5 w-full text-sm text-gray-900 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600"
-        placeholder=" "
+      <input type={type} {...register(name)} className="peer block px-2.5 pb-2.5 ml-1 cursor-pointer pt-5 w-full text-sm text-gray-900 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-purple-600" placeholder=" "
       />
-      <label
-        className={`absolute text-sm text-gray-500 duration-200 transform scale-100 top-1 left-3 z-10 origin-[0] 
+      <label className={`absolute text-sm text-gray-500 duration-200 transform scale-100 top-1 left-3 z-10 origin-[0] 
           peer-placeholder-shown:translate-y-2 peer-placeholder-shown:scale-100
-          peer-focus:scale-75 peer-focus:-translate-y-1
-        `}> {label}
+          peer-focus:scale-75 peer-focus:-translate-y-1`}> {label}
       </label>
     </div>
   )
@@ -31,9 +25,9 @@ const EnterDelivery = ({ register, setValue, watch }) => {
   }, [phone, setValue])
 
   return (
-    <section className=' w-[450px]'>
+    <section className='w-[350px] md:w-[450px]'>
       <h2 className='text-xl text-gray-700 font-bold pb-4 ml-4'>O'zingiz haqingizda</h2>
-      <div className='flex justify-around gap-4 items-center flex-wrap'>
+      <div className='flex-col md:flex-row flex justify-center gap-4 items-center'>
 
         <FloatingInput label="Ismingiz" name="name" register={register} width="w-[200px]"/>
 
