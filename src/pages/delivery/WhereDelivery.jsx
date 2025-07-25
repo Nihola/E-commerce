@@ -16,12 +16,12 @@ const FloatingInput = ({ label, name, register, type = "text", width = "w-[100px
 
 const WhereDelivery = ({ register }) => {
   return (
-    <section>
+    <section className='max-w-[500px]'>
       <h2 className='text-xl text-gray-700 font-bold pb-6 ml-4'>Qayerdan</h2>
       <div className='flex flex-wrap justify-center items-center'>
         <span className='w-full text-center flex ml-5 gap-4 items-center'>
           <label className='text-gray-700 font-bold text-[40px] '><FaHome /></label>
-          <select {...register("district")} className='border bg-white rounded-md p-2 border-gray-400 outline-none cursor-pointer w-[300px]'>
+          <select {...register("district")} className='border bg-white rounded-md p-2 border-gray-400 outline-none cursor-pointer w-[250px] md:w-[300px]'>
             <option>Hudud tanlang</option>
             <option value="Yunusobod">Yunusobod</option>
             <option value="Sergeli">Sergeli</option>
@@ -36,7 +36,7 @@ const WhereDelivery = ({ register }) => {
         <FloatingInput label="Ko'cha" name="street" register={register} width='w-[120px]' />
         <FloatingInput label="Uy" name="home" register={register} type="number" width="w-[120px]" />
         <FloatingInput label="Kvartira" name="apartment" register={register} type="number" width="w-[120px]" />
-        <span className='border border-gray-400 w-[420px] rounded-md px-2 bg-[white] my-2'>
+        <span className='border border-gray-400 w-[320px] md:w-[420px] rounded-md px-2 bg-[white] my-2'>
           <label className='block py-1 text-gray-700 font-semibold text-[14px]'>Yetkazib beruvchiga qo'shimcha ma'lumot</label>
           <textarea rows={1} className='outline-none w-full text-gray-700' {...register("additional")}></textarea>
         </span>

@@ -11,12 +11,12 @@ const SumDelivery = ({ register, handleSubmit, sendMessage = () => {} }) => {
   const finalTotal = total - discount;
 
   return (
-      <section className="w-[400px] bg-gray-100 border border-gray-400 py-4 px-6 rounded-lg mx-auto my-10">
+      <section className="w-[360px] md:w-[400px] bg-gray-100 border border-gray-400 py-4 px-6 rounded-lg mx-auto my-10">
         <div className="flex items-center justify-center gap-4 py-1 text-center mx-auto">
           <div onClick={() => setIsOn(!isOn)} className={`w-14 h-8 flex items-center rounded-full p-1 cursor-pointer ${isOn ? "bg-green-500" : "bg-gray-300"}`}>
             <div className={`bg-white w-6 h-6 rounded-full shadow-md transform ${isOn ? "translate-x-6" : ""}`}/>
           </div>
-          <p className="text-[#414141] text-xl">200$ Chegirma</p>
+          <p className="text-[#414141] text-xl">8$ Chegirma</p>
         </div>
 
         <div className="py-4 space-y-2">
@@ -43,7 +43,7 @@ const SumDelivery = ({ register, handleSubmit, sendMessage = () => {} }) => {
         <div className="border border-gray-400 rounded-md bg-white px-4 py-5 mb-2">
           <h2 className="text-xl font-bold mb-3">Promokod</h2>
           <input type="text" placeholder="Promokod kiriting" className="border my-2 p-2 outline-none w-full rounded-lg focus:bg-gray-200" />
-          <button type="button"className="border border-gray-300 text-gray-600 font-semibold p-2 cursor-pointer bg-gray-200 rounded-md w-full active:bg-[#FF7F3F] active:scale-95 duration-350">Qo'llash</button>
+          <button className="border border-gray-300 text-gray-600 font-semibold p-2 cursor-pointer bg-gray-200 rounded-md w-full active:bg-[#FF7F3F] active:scale-95 duration-350">Qo'llash</button>
         </div>
 
         <button onClick={handleSubmit(sendMessage)} type="submit" className="w-full border p-3 bg-green-500 text-white rounded-lg font-semibold cursor-pointer hover:bg-green-400 active:scale-96 duration-250">Yetkazib bergandan keyin to'lov</button>

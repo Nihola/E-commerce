@@ -7,9 +7,7 @@ import Favorites from './../pages/favorites/Favorites';
 import Home from "../pages/home/Home";
 import Categoryfilter from "../pages/category/Categoryfilter";
 import ProductListPage from "../pages/product/ProductList";
-import SinglePage from './../pages/singlepage/SinglePage';
-
- 
+import SinglePage from "../pages/singlepage/SinglePage";
 export const Router = createBrowserRouter([
   {
     path: "/",
